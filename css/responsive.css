@@ -1,81 +1,61 @@
 /* =========================================================
-   ELENA VOSS PHOTOGRAPHY — RESPONSIVE RULES
-   Breakpoints: Laptop (1200px), Tablet (900px), Mobile (600px)
+   FRAME & FLASH — RESPONSIVE RULES
+   Breakpoints: 980px / 900px / 860px / 840px / 620px / 560px
    ========================================================= */
 
 /* ---------------------------------------------------------
-   Laptop / small desktop
+   Nav: hamburger takes over below 840px
    --------------------------------------------------------- */
-@media (max-width: 1200px) {
-  :root {
-    --space-xl: 6rem;
+@media (max-width: 840px){
+  .nav-links{
+    position:fixed; inset:0; top:64px;
+    background:var(--ink); flex-direction:column; align-items:flex-start;
+    padding:2.2rem var(--edge); gap:1.7rem;
   }
-
-  .masonry-grid { column-count: 3; }
-
-  .testimonials-track { grid-template-columns: repeat(3, 1fr); gap: var(--space-sm); }
+  .nav-links a{font-size:1rem;}
+  .nav-toggle{display:block;}
 }
 
 /* ---------------------------------------------------------
-   Tablet
+   Contact-sheet grid: 4 -> 2 columns
    --------------------------------------------------------- */
-@media (max-width: 900px) {
-  :root {
-    --nav-height: 72px;
-    --space-xl: 5rem;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: var(--nav-height);
-    left: 0; right: 0;
-    background: rgba(15, 15, 15, 0.97);
-    backdrop-filter: blur(10px);
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-md);
-    padding: var(--space-lg) 0;
-    display: none;
-  }
-
-  .nav-links.mobile-open { display: flex; }
-
-  .menu-toggle { display: flex; }
-
-  .masonry-grid { column-count: 2; }
-
-  .about-grid { grid-template-columns: 1fr; }
-  .about-frame { display: none; }
-
-  .stats-grid { grid-template-columns: repeat(2, auto); row-gap: var(--space-md); }
-
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
-
-  .testimonials-track { grid-template-columns: 1fr; }
-
-  .contact-grid { grid-template-columns: 1fr; gap: var(--space-lg); }
+@media (max-width: 900px){
+  .frames-grid{grid-template-columns:repeat(2,1fr);}
 }
 
 /* ---------------------------------------------------------
-   Mobile
+   Contact section: 2 columns -> stacked
    --------------------------------------------------------- */
-@media (max-width: 600px) {
-  :root {
-    --space-lg: 3rem;
-    --space-xl: 3.5rem;
-  }
+@media (max-width: 860px){
+  .contact-grid{grid-template-columns:1fr; gap:3rem;}
+}
 
-  .hero-actions { flex-direction: column; align-items: stretch; }
-  .hero-actions .btn { text-align: center; }
+/* ---------------------------------------------------------
+   Services + crew grids: 3-4 -> 2 columns
+   --------------------------------------------------------- */
+@media (max-width: 980px){
+  .passes-grid{grid-template-columns:repeat(2,1fr);}
+  .crew-grid{grid-template-columns:repeat(2,1fr);}
+}
 
-  .masonry-grid { column-count: 1; }
+/* ---------------------------------------------------------
+   Services grid: 2 -> 1 column
+   --------------------------------------------------------- */
+@media (max-width: 620px){
+  .passes-grid{grid-template-columns:1fr;}
+}
 
-  .services-grid { grid-template-columns: 1fr; }
+/* ---------------------------------------------------------
+   Crew grid: 2 -> 1 column
+   --------------------------------------------------------- */
+@media (max-width: 560px){
+  .crew-grid{grid-template-columns:1fr;}
+}
 
-  .stats-grid { grid-template-columns: repeat(2, auto); }
-
-  .footer-grid { flex-direction: column; text-align: center; }
-
-  .lightbox-nav { font-size: 2rem; }
-  .lightbox-figure { max-width: 92vw; }
+/* ---------------------------------------------------------
+   Small mobile: tighten lightbox controls
+   --------------------------------------------------------- */
+@media (max-width: 480px){
+  .lightbox-nav{font-size:2rem;}
+  .lightbox-figure{max-width:92vw;}
 }
