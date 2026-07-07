@@ -1,0 +1,81 @@
+/* =========================================================
+   ELENA VOSS PHOTOGRAPHY — RESPONSIVE RULES
+   Breakpoints: Laptop (1200px), Tablet (900px), Mobile (600px)
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Laptop / small desktop
+   --------------------------------------------------------- */
+@media (max-width: 1200px) {
+  :root {
+    --space-xl: 6rem;
+  }
+
+  .masonry-grid { column-count: 3; }
+
+  .testimonials-track { grid-template-columns: repeat(3, 1fr); gap: var(--space-sm); }
+}
+
+/* ---------------------------------------------------------
+   Tablet
+   --------------------------------------------------------- */
+@media (max-width: 900px) {
+  :root {
+    --nav-height: 72px;
+    --space-xl: 5rem;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0; right: 0;
+    background: rgba(15, 15, 15, 0.97);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg) 0;
+    display: none;
+  }
+
+  .nav-links.mobile-open { display: flex; }
+
+  .menu-toggle { display: flex; }
+
+  .masonry-grid { column-count: 2; }
+
+  .about-grid { grid-template-columns: 1fr; }
+  .about-frame { display: none; }
+
+  .stats-grid { grid-template-columns: repeat(2, auto); row-gap: var(--space-md); }
+
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .testimonials-track { grid-template-columns: 1fr; }
+
+  .contact-grid { grid-template-columns: 1fr; gap: var(--space-lg); }
+}
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+@media (max-width: 600px) {
+  :root {
+    --space-lg: 3rem;
+    --space-xl: 3.5rem;
+  }
+
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { text-align: center; }
+
+  .masonry-grid { column-count: 1; }
+
+  .services-grid { grid-template-columns: 1fr; }
+
+  .stats-grid { grid-template-columns: repeat(2, auto); }
+
+  .footer-grid { flex-direction: column; text-align: center; }
+
+  .lightbox-nav { font-size: 2rem; }
+  .lightbox-figure { max-width: 92vw; }
+}
