@@ -1,0 +1,116 @@
+/* =========================================================
+   ELENA VOSS PHOTOGRAPHY — ANIMATIONS
+   Keyframes and scroll-triggered transition classes.
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Hero: slow Ken Burns zoom on the background image
+   --------------------------------------------------------- */
+@keyframes kenburns {
+  0%   { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.12) translate(-1%, -1%); }
+}
+
+/* Scroll cue pulse */
+@keyframes scrollcue {
+  0%   { transform: scaleY(0); transform-origin: top; opacity: 0; }
+  40%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  60%  { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+
+/* ---------------------------------------------------------
+   Fade in / slide up on scroll ("reveal" pattern)
+   Elements start hidden + offset, then main.js toggles
+   the .in-view class once they intersect the viewport.
+   --------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--dur-slow) var(--ease-cinematic),
+              transform var(--dur-slow) var(--ease-cinematic);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children of a revealed group */
+.reveal:nth-of-type(2) { transition-delay: 0.08s; }
+.reveal:nth-of-type(3) { transition-delay: 0.16s; }
+.reveal:nth-of-type(4) { transition-delay: 0.24s; }
+
+/* ---------------------------------------------------------
+   Zoom-in utility (used for gallery entrance, optional hook)
+   --------------------------------------------------------- */
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.zoom-in { animation: zoomIn var(--dur-med) var(--ease-cinematic) both; }
+
+/* ---------------------------------------------------------
+   Button ripple effect
+   A ::after pseudo-element expands from the click point;
+   the x/y origin is set inline via JS custom properties.
+   --------------------------------------------------------- */
+.ripple {
+  position: relative;
+}
+
+.ripple .ripple-circle {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  background: rgba(245, 243, 239, 0.45);
+  pointer-events: none;
+  animation: rippleAnim 0.6s var(--ease-cinematic);
+}
+
+.btn-primary .ripple-circle { background: rgba(15, 15, 15, 0.35); }
+
+@keyframes rippleAnim {
+  to { transform: scale(2.8); opacity: 0; }
+}
+
+/* ---------------------------------------------------------
+   Mobile menu open/close
+   --------------------------------------------------------- */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.nav-links.mobile-open {
+  animation: slideDown var(--dur-fast) var(--ease-cinematic) both;
+}
+
+/* Hamburger -> X transform, driven by .is-open on the button */
+.menu-toggle.is-open .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.menu-toggle.is-open .bar:nth-child(2) { opacity: 0; }
+.menu-toggle.is-open .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ---------------------------------------------------------
+   Lightbox fade
+   --------------------------------------------------------- */
+@keyframes lightboxFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightbox:not([hidden]) { animation: lightboxFade var(--dur-fast) ease both; }
+
+/* ---------------------------------------------------------
+   Reduced motion: respect user preference
+   --------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-bg { animation: none; }
+}
