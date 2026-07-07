@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elena Voss — Photography</title>
+  <meta name="description" content="Elena Voss is a cinematic photographer specializing in landscape, portrait, wedding, nature and street photography. View the full portfolio, services and studio story.">
+
+  <!-- Fonts: Fraunces (display), Inter (body), Space Mono (utility/data) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Film-grain / vignette overlay for cinematic atmosphere -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="site-header" id="site-header">
+    <nav class="navbar" aria-label="Primary navigation">
+      <a href="#hero" class="logo">
+        <span class="logo-mark">EV</span>
+        <span class="logo-text">Elena&nbsp;Voss</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" class="nav-link active-link" data-nav>Home</a></li>
+        <li><a href="#gallery" class="nav-link" data-nav>Portfolio</a></li>
+        <li><a href="#about" class="nav-link" data-nav>About</a></li>
+        <li><a href="#services" class="nav-link" data-nav>Services</a></li>
+        <li><a href="#contact" class="nav-link" data-nav>Contact</a></li>
+      </ul>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero-bg parallax" data-speed="0.4" style="background-image:url('images/hero/hero.jpg');" role="img" aria-label="Cinematic landscape photograph by Elena Voss"></div>
+      <div class="hero-scrim"></div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow reveal">Photographer &amp; Visual Storyteller</p>
+        <h1 class="hero-title reveal">
+          <span class="hero-title-line">Elena</span>
+          <span class="hero-title-line hero-title-italic">Voss</span>
+        </h1>
+        <p class="hero-tagline reveal">Light, held still.</p>
+        <div class="hero-actions reveal">
+          <a href="#gallery" class="btn btn-primary ripple">View Portfolio</a>
+          <a href="#contact" class="btn btn-outline ripple">Book a Session</a>
+        </div>
+      </div>
+
+      <button class="scroll-cue" id="scroll-cue" aria-label="Scroll to gallery">
+        <span class="scroll-cue-line"></span>
+        <span class="scroll-cue-text">Scroll</span>
+      </button>
+    </section>
+
+    <!-- ============ FEATURED GALLERY ============ -->
+    <section class="gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Work</p>
+          <h2 class="section-title">The Portfolio</h2>
+        </div>
+
+        <div class="filter-bar" role="tablist" aria-label="Filter gallery by category">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="landscape" role="tab" aria-selected="false">Landscape</button>
+          <button class="filter-btn" data-filter="portrait" role="tab" aria-selected="false">Portrait</button>
+          <button class="filter-btn" data-filter="wedding" role="tab" aria-selected="false">Wedding</button>
+          <button class="filter-btn" data-filter="nature" role="tab" aria-selected="false">Nature</button>
+          <button class="filter-btn" data-filter="street" role="tab" aria-selected="false">Street</button>
+        </div>
+
+        <div class="masonry-grid" id="masonry-grid">
+          <!-- Gallery items are duplicated in structure; each is a figure with data-category -->
+          <figure class="gallery-item span-tall" data-category="landscape">
+            <img src="images/gallery/landscape-01.jpg" alt="Misty mountain range at sunrise" loading="lazy">
+            <figcaption class="gallery-overlay">
+              <span class="gallery-cat">Landscape</span>
+              <span class="gallery-name">Ridgeline, Dawn</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="portrait">
+            <img src="images/gallery/portrait-01.jpg" alt="Studio portrait with dramatic side lighting" loading="lazy">
+            <figcaption class="gallery-overlay">
+              <span class="gallery-cat">Portrait</span>
+              <span class="gallery-name">Chiaroscuro Study</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="street">
+            <img src="images/gallery/street-01.jpg" alt="Candid street scene at night with neon reflections" loading="lazy">
+            <figcaption class="gallery-overlay">
+              <span class="gallery-cat">Street</span>
+              <span class="gallery-name">Neon District</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item span-tall" data-category="wedding">
+            <img src="images/gallery/wedding-01.jpg" alt="Bride and groom silhouette during golden hour" loading="lazy">
+            <figcaption class="gallery-overlay">
+              <span class="gallery-cat">Wedding</span>
+              <span class="gallery-name">Golden Hour Vows</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="nature">
+            <img src="images/gallery/nature-01.jpg" alt="Macro photograph of dew on a leaf" loading="lazy">
+            <figcaption class="gallery-overlay">
+              <span class="gallery-cat">Nature</span>
+              <span class="gallery-name">Quiet Dew</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="landscape">
+            <img src="images/gallery/landscape-02.jpg" alt="Coastal cliffs under stormy sky" loading="lazy">
+            <figcaption class="gallery-overlay">
+              <span class="gallery-cat">Landscape</span>
+              <span class="gallery-name">Storm Line</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item span-tall" data-category="portrait">
+            <img src="images/gallery/portrait-02.jpg" alt="Outdoor natural light portrait of a woman" loading="lazy">
+            <figcaption class="gallery-overlay">
+              <span class="gallery-cat">Portrait</span>
+              <span class="gallery-name">Amber Light</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="street">
+            <img src="images/gallery/street-02.jpg" alt="Busy market street with motion blur" loading="lazy">
+            <figcaption class="gallery-overlay">
+              <span class="gallery-cat">Street</span>
+              <span class="gallery-name">Market Rush</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="nature">
+            <img src="images/gallery/nature-02.jpg" alt="Forest canopy from below" loading="lazy">
+            <figcaption class="gallery-overlay">
+              <span class="gallery-cat">Nature</span>
+              <span class="gallery-name">Canopy</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item span-tall" data-category="wedding">
+            <img src="images/gallery/wedding-02.jpg" alt="Wedding reception details on table" loading="lazy">
+            <figcaption class="gallery-overlay">
+              <span class="gallery-cat">Wedding</span>
+              <span class="gallery-name">The Details</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="landscape">
+            <img src="images/gallery/landscape-03.jpg" alt="Desert dunes at dusk" loading="lazy">
+            <figcaption class="gallery-overlay">
+              <span class="gallery-cat">Landscape</span>
+              <span class="gallery-name">Dune Shadow</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="portrait">
+            <img src="images/gallery/portrait-03.jpg" alt="Black and white portrait close up" loading="lazy">
+            <figcaption class="gallery-overlay">
+              <span class="gallery-cat">Portrait</span>
+              <span class="gallery-name">Monochrome</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-image reveal">
+          <img src="images/about/profile.jpg" alt="Portrait of Elena Voss holding a camera" loading="lazy">
+          <div class="about-frame" aria-hidden="true"></div>
+        </div>
+
+        <div class="about-content">
+          <p class="eyebrow reveal">The Studio</p>
+          <h2 class="section-title reveal">Behind the Lens</h2>
+          <p class="about-bio reveal">
+            For fifteen years, I have chased the moment just before and just after the obvious one —
+            the breath before a vow, the hush after a wave breaks. My work moves between continents
+            and quiet rooms, always in search of the same thing: light that tells the truth.
+          </p>
+          <p class="about-bio reveal">
+            Based between Lisbon and the coastline, I take on a limited number of commissions each
+            year so every frame gets the attention it deserves.
+          </p>
+
+          <div class="stats-grid reveal">
+            <div class="stat-item">
+              <span class="stat-number" data-count="15">0</span>
+              <span class="stat-suffix">+</span>
+              <p class="stat-label">Years Experience</p>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="420">0</span>
+              <span class="stat-suffix">+</span>
+              <p class="stat-label">Sessions Delivered</p>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="12">0</span>
+              <p class="stat-label">International Awards</p>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="34">0</span>
+              <p class="stat-label">Countries Shot In</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">What I Offer</p>
+          <h2 class="section-title">Services</h2>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <span class="service-index">01</span>
+            <h3 class="service-title">Photography</h3>
+            <p class="service-desc">Fine-art prints and editorial sets crafted from long-form shoots on location.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-index">02</span>
+            <h3 class="service-title">Wedding</h3>
+            <p class="service-desc">Full-day coverage that favours candid emotion over posed formality.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-index">03</span>
+            <h3 class="service-title">Events</h3>
+            <p class="service-desc">Discreet, fast-paced coverage for launches, galas and private gatherings.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-index">04</span>
+            <h3 class="service-title">Commercial</h3>
+            <p class="service-desc">Brand and product photography built for campaigns and catalogues.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-index">05</span>
+            <h3 class="service-title">Portrait</h3>
+            <p class="service-desc">Studio or natural-light sessions, individual or family, printed archival-grade.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-index">06</span>
+            <h3 class="service-title">Travel</h3>
+            <p class="service-desc">Documentary-style travel stories shot on assignment across five continents.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Kind Words</p>
+          <h2 class="section-title">Client Testimonials</h2>
+        </div>
+
+        <div class="testimonials-track">
+          <blockquote class="testimonial-card reveal">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-text">Elena disappeared into the day and somehow captured every part of it we actually felt.</p>
+            <footer class="testimonial-author">— Marta &amp; Joao, Wedding Client</footer>
+          </blockquote>
+          <blockquote class="testimonial-card reveal">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-text">The most patient, precise photographer I've worked with. The prints still stop me in the hallway.</p>
+            <footer class="testimonial-author">— Daniel R., Portrait Client</footer>
+          </blockquote>
+          <blockquote class="testimonial-card reveal">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-text">Our campaign shots looked like something from a magazine, not a product shoot.</p>
+            <footer class="testimonial-author">— Noor K., Creative Director</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <p class="eyebrow reveal">Get In Touch</p>
+          <h2 class="section-title reveal">Let's Make Something Timeless</h2>
+          <p class="contact-lead reveal">Tell me about your story and I'll get back to you within two business days.</p>
+
+          <ul class="contact-details reveal">
+            <li>
+              <span class="contact-label">Email</span>
+              <a href="mailto:hello@elenavoss.com">hello@elenavoss.com</a>
+            </li>
+            <li>
+              <span class="contact-label">Phone</span>
+              <a href="tel:+15551234567">+1 (555) 123-4567</a>
+            </li>
+            <li>
+              <span class="contact-label">Studio</span>
+              <span>Lisbon, Portugal</span>
+            </li>
+          </ul>
+
+          <div class="map-placeholder reveal" role="img" aria-label="Map showing studio location in Lisbon, Portugal">
+            <span>Map Preview</span>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required aria-required="true">
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required aria-required="true">
+          </div>
+          <div class="form-row">
+            <label for="subject">Session Type</label>
+            <select id="subject" name="subject">
+              <option value="portrait">Portrait</option>
+              <option value="wedding">Wedding</option>
+              <option value="commercial">Commercial</option>
+              <option value="travel">Travel</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary ripple full-width">Send Message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="logo-mark">EV</span>
+        <span class="logo-text">Elena&nbsp;Voss</span>
+      </div>
+
+      <ul class="social-icons">
+        <li>
+          <a href="https://instagram.com" aria-label="Elena Voss on Instagram" target="_blank" rel="noopener">
+            <img src="images/icons/instagram.svg" alt="" width="20" height="20">
+          </a>
+        </li>
+        <li>
+          <a href="https://facebook.com" aria-label="Elena Voss on Facebook" target="_blank" rel="noopener">
+            <img src="images/icons/facebook.svg" alt="" width="20" height="20">
+          </a>
+        </li>
+        <li>
+          <a href="https://pinterest.com" aria-label="Elena Voss on Pinterest" target="_blank" rel="noopener">
+            <img src="images/icons/pinterest.svg" alt="" width="20" height="20">
+          </a>
+        </li>
+      </ul>
+
+      <p class="footer-copy">&copy; <span id="year"></span> Elena Voss Photography. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============ LIGHTBOX MODAL ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close preview">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8249;</button>
+    <figure class="lightbox-figure">
+      <img src="" alt="" id="lightbox-image">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">&#8250;</button>
+  </div>
+
+  <script src="js/navigation.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
